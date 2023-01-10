@@ -1,38 +1,1235 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Synesemibold;
+  src: url(../font/Syne-SemiBold.ttf);
+}
+@font-face {
+  font-family: Synebold;
+  src: url(../font/Syne-Bold.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: Synemed;
+  font-weight: 300;
+  src: url(../font/Syne-Medium.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: Synereg;
+  src: url(../font/Syne-Regular.ttf);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+*{
+  color: black;
+  /* scroll-behavior: smooth; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.logo{
+  /* background: #2C2C2C; */
+  /* padding: 0.3em 0.9em; */
+  /* margin: 0.3em; */
+  /* border-radius: 200px; */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  cursor: pointer;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.icon{
+  background: #2C2C2C;
+  padding: 1em 1.6em;
+  transform: translateY(3%);
+  margin-left: 0.4em;
+  margin-right: 0;
+  border-radius: 20em;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.icon:hover{
+  background: #3f3f3f;
+}
+
+nav{
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 3%;
+  font-family: Synesemibold;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  background-color: #000;
+  border: 0.1px solid rgb(77, 77, 77);
+  border-radius: 200px;
+
+  max-width: 760px;
+  margin: 0 auto;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+}
+
+.menu{
+  justify-content: space-evenly;
+  transition: 0.3s;
+}
+.menu a{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu ul li a{
+  padding: 0 1.56em;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.menu .active{
+  background-color: white;
+  color: #000;
+  padding: 1.25em 1.25em;
+  margin: 0.3em 0.3em;
+  border-radius: 200px;
+}
+
+.menu ul li a:hover{
+  /* border: 1px green solid; */
+
+  background-color: white;
+  color: #000;
+  padding: 1.25em 1.25em;
+  margin: 0.3em 0.3em;
+  border-radius: 200px;
+}
+
+.login{
+  color: white;
+  background: #2C2C2C;
+  padding: 20px 25px;
+  margin: 5px 5px;
+  border-radius: 200px;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.login:hover{
+  background: #3f3f3f;
+}
+
+.page1{
+  /* border: 2px solid peru; */
+  background-image: url("./assets/top1.svg");
+  background-size: cover;
+  height: 100%;
+}
+
+.bg{
+  width: 100%;
+  position: absolute;
+  z-index: -99;
+}
+
+.typo{
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 1.2em;
+  width: 10em;
+}
+
+.page1 h1{
+  /* border: #000 2px solid; */
+
+  margin-top: 10%;
+  font-family: Synebold;
+  font-size: 5.125em;
+  line-height: 6.125rem;
+  text-align: center;
+}
+.page1 h3{
+  /* border: #2C2C2C solid 1px; */
+
+  margin-top: 3%;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+  font-family: 'Jost';
+}
+
+.pickplan{
+  /* border: greenyellow solid 1px; */
+
+  display: flex;
+  margin: 4% auto;
+}
+
+.upbutt{
+  color: white;
+  padding: 0.75em 3.125em;
+  background: rgb(25, 25, 25);
+  font-size: 1.25em;
+  font-family: 'Jost';
+  font-weight: 600;
+  font-size: 1.25em;
+  border-radius: 0.5em;
+  transition: 0.6s;
+}
+
+.upbutt:hover{
+  background: #0F0F0F;
+  transform: translateY(-0.3em);
+  box-shadow: rgb(100, 100, 100) 0.3em 0.3em;
+}
+
+.upbutt1{
+  color: white;
+  padding: 0.65em 3.8em;
+  background: rgb(25, 25, 25);
+  font-size: 1.25em;
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 1.25em;
+  border-radius: 0.5em;
+  transition: 0.6s;
+}
+
+.upbutt1:hover{
+  background: #0F0F0F;
+  transform: translateY(-0.3em);
+  box-shadow: rgb(100, 100, 100) 0.3em 0.3em;
+}
+
+
+.wrapper{
+  margin-top: 8%;
+  padding-bottom: 6%;
+  /* border: 1px solid grey; */
+  display: flex;
+  /* transform: translateX(-100px); */
+  overflow-x: auto;
+  /* padding: 50px; */
+  /* justify-content: space-around; */
+}
+
+.item{
+  margin-right: 1.25em;
+}
+
+.clients{
+  width: 100%;
+  height: 8em;
+  background-image: url("./assets/Clients.svg");
+  background-size: cover;
+}
+
+.qpage{
+  position:inherit;
+  background-image: url("./assets/quotebg.svg");
+  background-size: cover;
+  padding-top: 7%;
+  padding-bottom: 10%;
+  /* border: 2px solid grey; */
+}
+
+.qpage img{
+  /* margin-top: 6%; */
+  position: absolute;
+  z-index: -9;
+}
+
+.qpage h1{
+  /* margin-top: 24%; */
+  font-family: Synebold;
+  font-size: 3.5em;
+  line-height: 4.125rem;
+  text-align: center;
+}
+
+.card{
+  margin: 0 auto;
+  margin-top: 5%;
+  min-height: 10em;
+  /* padding: 3% 2%; */
+  width: 65vw;
+  border-radius: 1.5em;
+  background-color: white;
+}
+
+.card h2{
+  /* top: 10%; */
+  padding-top: 2em;
+  padding-left: 3em;
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  /* border: 1px solid grey; */
+}
+
+.by{
+  float: right;
+  padding-right: 3em;
+  z-index: 2;
+}
+.by img{
+  transform: translate(-3em, -0.5625em);
+  z-index: 3;
+}
+.by span{
+  font-family: 'Jost';
+  font-weight: 300;
+}
+.by span b{
+  font-family: 'Jost';
+  font-weight: 400;
+}
+
+.membership{
+  background-image: url("./assets/Membbg.svg");
+  background-size: cover;
+  padding-top: 14%;
+  padding-bottom: 8%;
+}
+
+.membership h1{
+  font-family: Synebold;
+  font-size: 3.5em;
+  line-height: 4.125rem;
+  text-align: center;
+}
+
+.membership h3{
+  margin-top: 2%;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+  font-family: 'Jost';
+}
+
+.pickplan2{
+  /* border: greenyellow solid 1px; */
+
+  display: flex;
+  margin: 3% auto;
+}
+
+.testimonial-grid{
+  margin-top: 2%;
+  display: grid;
+  gap: 1.5em;
+  row-gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+  width: min(90%, 80em);
+  margin-inline: auto;
+}
+
+.testimonial-grid article{
+  /* border: 1px grey solid; */
+  padding-block: 2rem;
+  position: relative;
+}
+
+.testimonial-grid h2{
+  font-family: Synebold;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-grid p{
+  padding-top: 1em;
+  font-family: 'Jost';
+  font-weight: 350;
+  font-size: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconss{
+  padding-block: 2rem;
+  padding-bottom: 3em;
+  /* border: 1px grey solid; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deliverables{
+  background-image: url("./assets/Delbg.svg");
+  background-size: cover;
+  padding-top: 6%;
+  padding-bottom: 6%;
+
+}
+
+.deliverables h1{
+  font-family: Synebold;
+  font-size: 3.5em;
+  line-height: 4.125rem;
+  text-align: center;
+}
+
+.dellist{
+  margin-top: 5%;
+  display: grid;
+  gap: 2em;
+  /* row-gap: 2em; */
+  grid-template-columns: repeat(3, 1fr);
+  width: min(90%, 80em);
+  margin-inline: auto;
+}
+
+.dellist li{
+  font-family: 'Jost';
+  font-weight: 450;
+  font-size: 1em;
+  list-style: none;
+  padding-block: 1.125em;
+  padding-left: 1.5em;
+  border-radius: 0.4em;
+  background: rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(2px -2px 3px rgba(255, 255, 255, 0.30)) drop-shadow(-2px 2px 3px rgba(0, 0, 0, 0.08));
+  transition: 0.5s;
+}
+
+.dellist li:hover{
+  background: white;
+  transition-timing-function: ease-out;
+}
+
+.membplan{
+  background-image: url("./assets/Planbg.svg");
+  background-size: cover;
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+.membplan h1{
+  font-family: Synebold;
+  font-size: 3.5em;
+  line-height: 4.125rem;
+  text-align: center;
+}
+
+.pplans{
+  padding-top: 4em;
+  margin-top: 2%;
+  display: grid;
+  gap: 1.5em;
+  row-gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  width: min(90%, 80em);
+  margin-inline: auto;
+}
+
+.bookcall{
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 0.8em;
+}
+
+.bookcall1{
+  margin-left: 7.4em;
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 0.8em;
+}
+
+.monthly{
+  z-index: 50;
+  background: white;
+  padding: 0 1.5em;
+  padding-top: 3em;
+  border-radius: 1em 1em 0 0;
+}
+
+.monthly h4{
+  font-family: Synebold;
+  font-size: 1.625em;
+}
+
+.monthly p{
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 0.85em;
+  padding-top: 0.5em;
+}
+
+.monthly h5{
+  font-family: Synebold;
+  font-size: 2em;
+  padding-top: 3em;
+}
+
+.panu, .qsub, .msub{
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 0.85em;
+  color: #969696;
+}
+
+
+.quarter{
+  z-index: 50;
+  background: white;
+  padding-block: 3em;
+  padding-left: 1.5em;
+  border-radius: 1em 1em 0 0;
+}
+
+.quarter h4{
+  font-family: Synebold;
+  font-size: 1.625em;
+}
+
+.quarter p{
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 0.85em;
+  padding-top: 0.5em;
+}
+
+
+.quarter h5{
+  font-family: Synebold;
+  font-size: 2em;
+  padding-top: 3.55em;
+}
+
+.year{
+  z-index: 50;
+  background: white;
+  padding-block: 3em;
+  padding-left: 1.5em;
+  border-radius: 1em 1em 0 0;
+}
+
+.year h4{
+  font-family: Synebold;
+  font-size: 1.625em;
+}
+
+.year p{
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 0.85em;
+  padding-top: 0.5em;
+}
+
+
+.year h5{
+  font-family: Synebold;
+  font-size: 2em;
+  padding-top: 3.55em;
+}
+
+.vcont{
+  z-index: 50;
+  grid-column: 4;
+  grid-row: 1/3;
+  background: white;
+  padding: 0 1.5em;
+  padding-block: 3em;
+  border-radius: 1em;
+}
+
+.vcont h4{
+  font-family: Synebold;
+  font-size: 1.625em;
+}
+
+.gets{
+  margin-top: 2em;
+  display: flex;
+}
+
+.gets1{
+  margin: 0 auto;
+  margin-top: 2em;
+  display: flex;
+}
+
+.vcont p{
+  margin-top: 1em;
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 0.85em;
+  padding-top: 0.3em;
+}
+
+.navii{
+  width: 12em;
+  margin-top: 2.5em;
+  margin-left: 1.6em;
+}
+
+.upbutt3{
+  margin-top: 1em;
+  color: black;
+  padding: 0.6em 2.25em;
+  border: #0F0F0F 1px solid;
+  font-size: 1.25em;
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 1.25em;
+  border-radius: 0.5em;
+  transition: 0.6s;
+}
+
+.upbutt3{
+  margin-top: 1em;
+  color: #3f3f3f;
+  padding: 0.6em 2.25em;
+  border: #0F0F0F 1px solid;
+  font-size: 1.25em;
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 1.25em;
+  border-radius: 0.5em;
+  transition: 0.6s;
+}
+
+.upbutt3:hover{
+  color: black;
+  transform: translateY(-0.3em);
+  box-shadow: rgb(206, 206, 206) 0.3em 0.3em;
+}
+
+
+.wainc{
+  padding-block: 2em;
+  padding-left: 1.5em;
+  border-radius: 0 0 1em 1em;
+  background: #fff;
+}
+
+.wainc h3{
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.wainc ul li{
+  font-family: 'Jost';
+  padding: 0.25em 0;
+  font-size: 250;
+  font-size: 1em;
+}
+
+.wainc ul{
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.contracts{
+  background-image: url("./assets/serbg.svg");
+  background-size: cover;
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+.contracts h1{
+  font-family: Synebold;
+  font-size: 3.5em;
+  line-height: 4.125rem;
+  text-align: center; 
+}
+
+.sercards{
+  margin-top: 6%;
+  width: min(90%, 80em);
+  display: grid;
+  gap: 1.5em;
+  row-gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  margin-inline: auto;
+}
+
+.card1, .card2, .card3, .card4{
+  z-index: 50;
+  background: white;
+  padding: 1.6em 1.7em;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.card1 img, .card2 img, .card3 img, .card4 img{
+  margin-top: 1em;
+  width: 2.8em;
+  height: 2.55em;
+}
+
+.nextarrow{
+  position: absolute;
+  float: right;
+  margin-left: 82%;
+  transform: translateY(-10%);
+  opacity: 0;
+  transition: 0.5s;
+  /* right: 20%; */
+}
+
+
+
+.card1 h6, .card2 h6, .card3 h6, .card4 h6{
+  margin-top: 8em;
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 0.85em;
+}
+
+.niche{
+  transform: translateY(50%);
+  transition: 0.5s;
+}
+
+.card1:hover .niche,.card2:hover .niche,.card3:hover .niche,.card4:hover .niche{
+  transform: translateY(0);
+}
+.card1:hover .nextarrow{
+  opacity: 100%;
+}
+
+
+.card1cont{
+  opacity: 0%;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.card1:hover .nextarrow{
+  opacity: 100%;
+}
+.card1:hover .cardline{
+  opacity: 100%;
+}
+.card1:hover .card1cont{
+  opacity: 100%;
+}
+
+.card2:hover .nextarrow{
+  opacity: 100%;
+}
+.card2:hover .cardline{
+  opacity: 100%;
+}
+.card2:hover .card1cont{
+  opacity: 100%;
+}
+
+.card3:hover .nextarrow{
+  opacity: 100%;
+}
+.card3:hover .cardline{
+  opacity: 100%;
+}
+.card3:hover .card1cont{
+  opacity: 100%;
+}
+
+.card2cont{
+  opacity: 0%;
+  transition: 0.5s;
+}
+.card4:hover .card2cont{
+  opacity: 100%;
+}
+.card4:hover .cardline{
+  opacity: 100%;
+}
+
+.tit{
+  font-family: Synebold;
+  font-size: 1.5em;
+  margin-top: 0.1em;
+}
+
+.cardline{
+  opacity: 0;
+  margin-top: 1em;
+  margin-bottom: 0.75em;
+  width: 100%;
+  border: 0.5px solid black;
+  transition: 0.5s;
+}
+
+.card1cont{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.81em;
+  line-height: 1.6em;
+}
+
+.card2cont{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8em;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8% 8%;
+}
+
+.foot{
+  padding-top: 8%;
+  padding-bottom: 8%;
+  background-color: #000;
+}
+
+.contus{
+  display: flex;
+  padding: 2% 2%;
+  width: min(90%, 80em);
+  border: 1px solid grey;
+  margin-inline: auto;
+  border-radius: 1.1em;
+}
+
+.contus h4{
+  color: white;
+  font-family: Synebold;
+  font-size: 1.625em;
+}
+
+.contus p{
+  color: white;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9em;
+  padding-top: 0.3em;
+}
+
+.boxleft{
+  float: left;
+  justify-content: center;
+  align-items: center;
+  /* text-align: right; */
+  /* border: 1px green solid; */
+}
+
+.email-box{
+  /* left: 62%; */
+  /* padding: 0.8em; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  position: absolute;
+  right: 8%;
+  /* left: 75%; */
+  transform: translateY(12%);
+  float: right;
+  justify-content: center;
+  /* background-color: #fff; */
+  display: flex;
+}
+
+.icc{
+  padding: 0.8em;
+  border-radius: 0.5em 0 0 0.5em;
+  background-color: #fff;
+}
+
+.tbox,.btn{
+  outline: none;
+  border: none;
+}
+
+.tbox{
+  font-family: Synesemibold;
+  padding: 0 0em;
+  width: 0;
+  background: #F4F4F4;
+  transition: 0.6s;
+}
+.email-box:hover > .tbox,.tbox:focus{
+  width: 18em;
+  padding: 0 0.8em;
+}
+.btn{
+  font-family: Synesemibold;
+  color: #000;
+  padding: 0 0.8em; 
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 0 0.5em 0.5em 0;
+  transition: 0.3s;
+}
+.btn:hover{
+  color: #000;
+}
+
+.footer{
+  margin-top: 6%;
+  width: min(90%, 80em);
+  display: grid;
+  gap: 4em;
+  /* row-gap: 9em; */
+  grid-template-columns: repeat(4, 1fr);
+  margin-inline: auto;
+}
+
+.fopart1,.fopart2,.fopart3,.fopart4,.fopart8{
+  color: white;
+  /* border: 1px solid violet; */
+}
+
+.fopart1 p{
+  color: #696969;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 450;
+  font-size: 0.75em;
+  padding-top: 2em;
+}
+
+.fopart2 h5{
+  color: white;
+  font-family: Synemed;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  font-size: 1.85em;
+}
+
+.fopart4 h5{
+  color: white;
+  font-family: Synemed;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  font-size: 1.85em;
+}
+
+.fopart2 ul{
+  margin-top: 10%;
+}
+
+.fopart2 ul li{ 
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+  color: white;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 0.8em;
+  padding: 1em 0;
+  transition: 0.2s;
+}
+.fopart2 ul li:hover{
+  color: #e0e0e0;
+}
+
+
+.fopart4 ul{
+  margin-top: 10%;
+}
+
+.fopart4 ul li{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 0.8em;
+  padding: 1em 0;
+}
+
+.li1,.li2{
+  display: flex;
+  align-items: center;
+}
+.fopart4 ul li p{
+  padding-left: 8%;
+  color: white;
+}
+
+.li3 img{
+  padding-right: 8%;
+}
+
+.line{
+  width: min(90%, 80em);
+  margin: 0 auto;
+  margin-top: 4%;
+  border: 0.5px solid #4F4F4F;
+}
+
+.lastp{
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #4F4F4F;
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+.tag{
+  color: white;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 0.85em;
+  position: absolute;
+  z-index: 200;
+  border-radius: 0 0.6em 0.6em 0.6em;
+  padding: 0.15em 0.6em;
+  background-color: #0032DE;
+  transform: translateY(-25%);
+}
+
+
+.Login{
+  background-image: url('../public/Loginbg.png');
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.Signup{
+  background-image: url('../public/Loginbg.png');
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.largeicon{
+  margin: 4em auto;
+}
+
+.logcard{
+  /* padding: 3em 20em; */
+  margin: 0 auto;
+  width: 40em;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 2.4em;
+}
+
+.logcard h2{
+  margin: 2em 0 0 10%;
+  width: 80%;
+  font-family: Synebold;
+}
+
+.log-box{
+  margin: 2em 0 0 4em;
+  width: 80%;
+}
+
+.sign-box{
+  margin: 2em 0 0 4em;
+  width: 80%;
+}
+
+.log-box div{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.sign-box div{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.maillog{
+  /* border: 1px grey solid; */
+  padding: 1.3em 1.3em;
+  border-radius: 0.5em 0 0 0.5em;
+  background-color: #F9FBFC;
+  /* background-color: #1e1e1e; */
+}
+
+.mailbox{
+  /* border: 1px grey solid; */
+  outline: none;
+  border: none;
+  width: 100%;
+  font-family: Synebold;
+  font-size: 1em;
+  color: #000;
+  padding: 1.35em 1em 1.35em 1em;
+  border-radius: 0 0.5em 0.5em 0;
+  background-color: #F9FBFC;
+}
+
+.botname{
+  margin-top: 1em;
+}
+
+.passlog{
+  padding: 1.3em 1.3em;
+  border-radius: 0.5em 0 0 0.5em;
+  background-color: #F9FBFC; 
+}
+
+.passbox{
+  outline: none;
+  border: none;
+  width: 100%;
+  font-family: Synebold;
+  font-size: 1em;
+  color: #000;
+  padding: 1.35em 1em 1.35em 1em;
+  background-color: #F9FBFC;
+}
+
+.eyeopen{
+  padding: 1.3em 1.3em;
+  border-radius: 0 0.5em 0.5em 0;
+  background-color: #F9FBFC; 
+  cursor: pointer;
+}
+
+.log-box h4{
+  float: right;
+  margin: 1em 0;
+  font-family: Synebold;
+  font-size: 0.75em;
+  color: #818181;
+  cursor: pointer;
+}
+
+.sign-box h4{
+  /* float: center; */
+  text-align: center;
+  margin: 1em 0 -1em 0;
+  font-family: Synebold;
+  font-size: 0.75em;
+  color: #818181;
+}
+
+.sign-box h4 a{
+  color: #0032DE;
+}
+
+.logbtn{
+  outline: none;
+  border: none;
+  width: 100%;
+  font-family: Synebold;
+  font-size: 1em;
+  color: #000;
+  padding: 1.35em 1em 1.35em 1em;
+  border-radius: 0.5em;
+  background-color: #D8E2FC;
+  transition: 0.3s;
+}
+
+.signbtn{
+  margin-top: 1.5em;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-family: Synebold;
+  font-size: 1em;
+  color: #000;
+  padding: 1.35em 1em 1.35em 1em;
+  border-radius: 0.5em;
+  background-color: #D8E2FC;
+  transition: 0.3s;
+}
+
+.signbtn:hover{
+  background-color: #0032DE;
+  color: white;
+}
+
+.logbtn:hover{
+  background-color: #0032DE;
+  color: white;
+}
+
+.log-box hr{
+  margin: 2em 0;
+  border: #EBEBEB 0.5px solid;
+  width: 100%;
+}
+
+.sign-box hr{
+  margin: 2em 0;
+  border: #EBEBEB 0.5px solid;
+  width: 100%;
+}
+
+.log-box h3{
+  font-family: Synereg;
+  font-weight: 300;
+  font-size: 1em;
+  margin-bottom: 3em;
+  color: #161616;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.sign-box h3{
+  font-family: Synereg;
+  font-weight: 300;
+  font-size: 1em;
+  margin-bottom: 3em;
+  color: #161616;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.log-box h3 a{
+  font-family: Synebold;
+  color: #0032DE;
+  text-decoration: none;
+}
+
+.sign-box h3 a{
+  font-family: Synebold;
+  color: #0032DE;
+  text-decoration: none;
+}
+
+.logcard{
+  margin-bottom: 10.54em;
+}
+
+.tandc{
+  background-image: url('../public/t&cbg.svg');
+  background-size: cover;
+  padding: 1em 0;
+  padding-bottom: 4em;
 }
