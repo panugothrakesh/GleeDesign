@@ -814,12 +814,14 @@ nav{
 }
 
 .contus{
-  display: flex;
+  position:inherit;
   padding: 2% 2%;
   width: min(90%, 80em);
   border: 1px solid grey;
   margin-inline: auto;
   border-radius: 1.1em;
+  padding-top: 2vw;
+  padding-bottom: 5.4vw;
 }
 
 .contus h4{
@@ -831,6 +833,7 @@ nav{
 .contus p{
   color: white;
   font-family: 'Poppins';
+  display: flex;
   font-style: normal;
   font-weight: 500;
   font-size: 0.9em;
@@ -841,7 +844,6 @@ nav{
   float: left;
   justify-content: center;
   align-items: center;
-  /* text-align: right; */
   /* border: 1px green solid; */
 }
 
@@ -850,14 +852,18 @@ nav{
   /* padding: 0.8em; */
   /* top: 50%; */
   /* transform: translateY(-50%); */
-  position: absolute;
-  right: 8%;
   /* left: 75%; */
+  /* position: absolute;
+  right: 8%;
   transform: translateY(12%);
+  float: right; */
   float: right;
-  justify-content: center;
-  /* background-color: #fff; */
   display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-right: 0.3em;
+  /* justify-content: center; */
+  /* background-color: #fff; */
 }
 
 .icc{
@@ -1097,7 +1103,7 @@ nav{
 }
 
 .passlog{
-  padding: 1.3em 1.3em;
+  padding: 1.27em 1.3em;
   border-radius: 0.5em 0 0 0.5em;
   background-color: #F9FBFC; 
 }
@@ -1114,11 +1120,12 @@ nav{
 }
 
 .eyeopen{
-  padding: 1.3em 1.3em;
+  padding: 1.37em 1.3em;
   border-radius: 0 0.5em 0.5em 0;
   background-color: #F9FBFC; 
   cursor: pointer;
 }
+
 
 .log-box h4{
   float: right;
