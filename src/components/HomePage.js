@@ -12,9 +12,10 @@ import Navbar from "./Navbar";
 
 
 
-const Quote = lazy(()=>import("./Quote"));
+const Quote = lazy(()=>import("./Quote"))
 // const Clients = lazy(()=>import("./clients"));
-const Membership = lazy(()=>import('./Membership.js'));
+const Blogs = lazy(()=>import("./blogs.js"))
+const Membership = lazy(()=>import('./Membership.js'))
 const Deliverables = lazy(()=>import('./Deliverables.js'))
 const Pricing = lazy(()=>import('./Pricing.js'))
 const Services = lazy(()=>import('./Services.js'))
@@ -38,8 +39,6 @@ export default function HomePage(){
               <div className="upbutt">
               Pick a plan
               </div>
-              <div className="downbutt">
-              </div>
             </button></Scroll>
             
             <div className="wrapper">
@@ -51,8 +50,8 @@ export default function HomePage(){
             </div>
             <Suspense fallback={<div>Loading...</div>}>
             {/* <Clients/> */}
-            
             <Quote/>
+            <Blogs/>
             <Membership/>
             <Deliverables/>
             <Pricing/>

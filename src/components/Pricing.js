@@ -91,6 +91,12 @@ export default function Pricing(){
                   </ul>
                 </div>
               </div>
+              <div className="mark">
+                <h4>Marketing Service</h4>
+                <p>We use new technology to design solutions that scale new client acquisition<br/>
+                and retention across the full customer experience.
+                </p>
+              </div>
             </div>
     );
 }
